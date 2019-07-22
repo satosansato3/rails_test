@@ -1,0 +1,16 @@
+current directory: /mnt/c/RailsSampleApp/vendor/bundle/ruby/2.4.0/gems/binding_of_caller-0.8.0/ext/binding_of_caller
+/home/sato/.rbenv/versions/2.4.1/bin/ruby -r ./siteconf20190722-81-1oj0931.rb extconf.rb
+
+current directory: /mnt/c/RailsSampleApp/vendor/bundle/ruby/2.4.0/gems/binding_of_caller-0.8.0/ext/binding_of_caller
+make "DESTDIR=" clean
+make: *** No rule to make target 'clean'.  Stop.
+
+current directory: /mnt/c/RailsSampleApp/vendor/bundle/ruby/2.4.0/gems/binding_of_caller-0.8.0/ext/binding_of_caller
+make "DESTDIR="
+echo "Nada."
+Nada.
+
+current directory: /mnt/c/RailsSampleApp/vendor/bundle/ruby/2.4.0/gems/binding_of_caller-0.8.0/ext/binding_of_caller
+make "DESTDIR=" install
+echo "Nada."
+Nada.

@@ -1,0 +1,15 @@
+current directory: /mnt/c/RailsSampleApp/vendor/bundle/ruby/2.4.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+/home/sato/.rbenv/versions/2.4.1/bin/ruby -r ./siteconf20190722-81-d4jrwp.rb extconf.rb
+creating Makefile
+
+current directory: /mnt/c/RailsSampleApp/vendor/bundle/ruby/2.4.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR=" clean
+
+current directory: /mnt/c/RailsSampleApp/vendor/bundle/ruby/2.4.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR="
+compiling debug_inspector.c
+linking shared-object debug_inspector.so
+
+current directory: /mnt/c/RailsSampleApp/vendor/bundle/ruby/2.4.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 debug_inspector.so ./.gem.20190722-81-1fo06d9
