@@ -38,6 +38,8 @@ gem 'jquery-rails'
 gem 'popper_js', '>= 1.14.3'
 gem 'tether-rails'
 gem 'devise'
+gem 'sidekiq'
+gem 'sinatra'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
