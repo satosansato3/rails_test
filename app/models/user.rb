@@ -17,11 +17,18 @@
 #  locked_at              :datetime
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  name                   :string(255)
 #
 
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  validates :name,
+            presence: true,
+            uniqueness: { case_sensitive: false }
+  validates_format_of :name, with: /^[a-zA-Z0-9_\.]*$/, multiline: true
+  validate :validate_name
+
+  attr_accessor :login
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :confirmable, :lockable, :timeoutable
@@ -29,4 +36,24 @@ class User < ApplicationRecord
   def send_devise_notification(notification, *args)
     devise_mailer.send(notification, self, *args).deliver_later
   end
+
+  def login
+    @login || self.name || self.email
+  end
+
+  def validate_name
+    errors.add(:name, :invalid) if User.where(email: name).exists?
+  end
+
+  def self.find_for_database_authentication(warden_confitions)
+    conditions = warden_confitions.dup
+    conditions[:email].downcase! if conditions[:email]
+    login = conditions.delete(:login)
+
+    where(conditions.to_hash).where(
+      ["lower(name) = :value OR lower(email) = :value",
+        { value: login.downcase }]
+    ).first
+  end
+
 end
