@@ -1,4 +1,9 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
-
-<h1>Hello, <%= @user.name %></h1>
+<div class="col-md-3">
+    <div class="card">
+        <%= image_tag current_user.avatar.url, class: "card-img-top rounded" %>
+        <div class="card-body">
+            <h4 class="card-title"><%= @user.name %></h4>
+            <p class="card-text">ユーザ情報</p>
+        </div>
+    </div>
+</div>

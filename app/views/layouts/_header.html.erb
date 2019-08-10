@@ -3,6 +3,10 @@
     <% if user_signed_in? %>
         <ul class="nav justify-content-end">
             <li class="nav-item">
+                <%= image_tag current_user.avatar.url, class: "rounded", 
+                style: "width: 50px" %>
+            </li>
+            <li class="nav-item">
                 <%= link_to "マイページ", edit_user_registration_path, 
                 class: "nav-link text-secondary" %>
             </li>
