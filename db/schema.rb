@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_12_120909) do
+ActiveRecord::Schema.define(version: 2019_08_12_144715) do
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "body"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2019_08_12_120909) do
     t.integer "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.integer "posts_count", default: 0, null: false
+    t.integer "role", default: 0, null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["name"], name: "index_users_on_name", unique: true
