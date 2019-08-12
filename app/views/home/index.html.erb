@@ -1,9 +1,15 @@
-<div class="col-md-3">
-    <div class="card">
-        <%= image_tag current_user.avatar.url, class: "card-img-top rounded" %>
-        <div class="card-body">
-            <h4 class="card-title"><%= @user.name %></h4>
-            <p class="card-text">ユーザ情報</p>
+<div class="row">
+    <div class="col-md-3">
+        <div class="card">
+            <%= image_tag current_user.avatar.url, class: "card-img-top rounded" %>
+            <div class="card-body">
+                <h4 class="card-title"><%= @user.name %></h4>
+                <p class="card-text">ユーザ情報</p>
+            </div>
         </div>
+    </div>               
+    <div class="col-md-9">
+        <%= render partial: "post", collection: @posts %>
     </div>
 </div>
+
