@@ -1,3 +1,11 @@
+<%= form_with model: Post.new do |f| %>
+    <div class="input-group pb-3">
+        <%= f.text_field :body, class: "form-control", placeholder: "今なにしてる？" %>
+        <span class="input-group-btn">
+            <%= f.submit "投稿", class: "btn btn-primary" %>
+        </span>
+    </div>
+<% end %>
 <div class="row">
     <div class="col-md-3">
         <div class="card">
