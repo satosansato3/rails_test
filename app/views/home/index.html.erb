@@ -12,7 +12,10 @@
             <%= image_tag current_user.avatar.url, class: "card-img-top rounded" %>
             <div class="card-body">
                 <h4 class="card-title"><%= @user.name %></h4>
-                <p class="card-text">ユーザ情報</p>
+                <div class="card-text">
+                    <p class="text-secondary"><%= @user.created_month %>に登録</p>
+                    <p class="text-secondary"><%= @user.posts_count %> posts</p>
+                </div>
             </div>
         </div>
     </div>               

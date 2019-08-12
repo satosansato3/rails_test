@@ -11,4 +11,5 @@
 
 class Post < ApplicationRecord
   belongs_to :user
+  counter_culture :user
 end
