@@ -14,7 +14,7 @@ set :stage, :production
 set :deploy_via, :remote_cache
 set :linked_dirs, fetch(:linked_dirs, []).push("log", "tmp/pids", "tmp/cache", "tmp/sockets",
                                                 "vendor/bundle", "public/system", "public/uploads")
-set :linked_files, fetch(:linked_files, []).push("config/database.yml", "config/credentials.yml",
+set :linked_files, fetch(:linked_files, []).push("config/database.yml", "config/credentials.yml.enc",
                                                 "config/master.key")              
 
 set :puma_threads, [4, 16]                                                
@@ -67,7 +67,7 @@ namespace :deploy do
     task :upload do
         on roles(:app) do
             sudo :mkdir, "-p", "#{shared_path}/config"
-            sudo "chown -R #{fetch(:user}:#{fetch(:user)} /opt/#{fetch(:application)}"
+            sudo %[chown -R #{fetch(:user)}:#{fetch(:user)} /opt/#{fetch(:application)}]
             sudo :mkdir, "-p", "/etc/nginx/sites-enabled"
             sudo :mkdir, "-p", "/etc/nginx/sites-available"
 
