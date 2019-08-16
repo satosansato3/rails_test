@@ -98,8 +98,21 @@ Rails.application.configure do
     s3_region: "ap-northeast-1",
     s3_hostname: "s3-ap-northeast-1.amazonaws.com",
     s3_credentials: {
-      access_key_id: Rails.application.credentials[:production][:AWS_REGION],
+      access_key_id: Rails.application.credentials[:production][:AWS_ACCESS_KEY_ID],
       secret_access_key: Rails.application.credentials[:production][:AWS_SECRET_ACCESS_KEY]
     }
+  }
+
+  config.action_mailer.default_url_options = {
+    host: Rails.application.credentials[:prodcution][:Host_ADDRESS]
+  }
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    authentication: :plain,
+    user_name: Rails.application.credentials.[:prodcution][:SMTP_EMAIL],
+    password: Rails.application.credentials.[:prodcution][:SMTP_PASSWORD]
   }
 end
