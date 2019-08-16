@@ -104,7 +104,7 @@ Rails.application.configure do
   }
 
   config.action_mailer.default_url_options = {
-    host: Rails.application.credentials[:prodcution][:Host_ADDRESS]
+    host: Rails.application.credentials[:production][:Host_ADDRESS]
   }
 
   config.action_mailer.delivery_method = :smtp
@@ -112,7 +112,7 @@ Rails.application.configure do
     address: "smtp.gmail.com",
     port: 587,
     authentication: :plain,
-    user_name: Rails.application.credentials[:prodcution][:SMTP_EMAIL],
-    password: Rails.application.credentials[:prodcution][:SMTP_PASSWORD]
+    user_name: Rails.application.credentials[:production][:SMTP_EMAIL],
+    password: Rails.application.credentials[:production][:SMTP_PASSWORD]
   }
 end
